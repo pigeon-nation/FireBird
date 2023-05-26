@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<title>40?</title>
+		<style>
+			/* Container holding the image and the text */
+			.container {
+				position: relative;
+			}
+			
+			/* Bottom right text */
+			.text-block {
+				position: absolute;
+				bottom: 20px;
+				right: 20px;
+				background-color: black;
+				color: white;
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="w3-card w3-container w3-row-padding w3-margin-top w3-teal">
+			<h1 class="w3-center">Somehow, you have found yourself end up here.</h1>
+			<p class="w3-center">
+				Anyway, there is really not much point in you being here, because you can only navigate to the actual documentation on this website by going back to the FireBird Documentation page. Thanks for visiting "the unknown page"!! I barely ever see the light of day! Check back here sometime, I might bare gifts!!
+			</p>
+			
+			<h4 class="w3-center">In case someone asked (which is unlikely), this year is <script>document.write(Date().split(' ')[3])</script>. </h4>
+			<div class="w3-center">
+				<img src="https://www.stanleypackaging.com.au/wp-content/uploads/2021/02/GB330-2.jpg" alt="Norway" style="width:100%;" width="400" 
+					height="500">
+				<div class="text-block">
+					<br>
+					<img src="https://st.depositphotos.com/3538103/5170/i/450/depositphotos_51702463-stock-photo-bell-icon-design.jpg" height="200" width="200">
+					<p id="demo"></p>
+					
+					<script>
+						// Set the date we're counting down to
+						var countDownDate = new Date("Jan 1, 2024").getTime();
+						
+						// Update the count down every 1 second
+						var x = setInterval(function() {
+							
+							// Get today's date and time
+							var now = new Date().getTime();
+							
+							// Find the distance between now and the count down date
+							var distance = countDownDate - now;
+							
+							// Time calculations for days, hours, minutes and seconds
+							var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+							var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+							var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+							var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+							
+							// Display the result in the element with id="demo"
+							document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+							+ minutes + "m " + seconds + "s ";
+							
+							// If the count down is finished, write some text
+							if (distance < 0) {
+								clearInterval(x);
+								document.getElementById("demo").innerHTML = "EXPIRED";
+							}
+						}, 1000);
+					</script>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>
