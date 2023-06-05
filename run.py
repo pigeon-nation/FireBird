@@ -5,7 +5,7 @@ import http.server
 import socketserver
 import threading
 
-PORT = 8001
+PORT = 8000
 DIRECTORY = __file__[:-6] + 'firebird.w3spaces.com/'
 
 class Handler(http.server.SimpleHTTPRequestHandler):
