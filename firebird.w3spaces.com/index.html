@@ -1,463 +1,463 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
-    <head>
-        <!-- Title -->
-        <title>FireBird</title>
-        
-        <!-- Meta -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <!-- Bootstrap -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-        
-        <!-- Google Fonts: Inconsolata -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
-        <style>
-            .code {
-                font-family: 'Inconsolata', serif;
-            }
-        </style>
-        
-        <!-- Basic CSS Alternate Font Handling -->
-        <style>
-            .codefont {  
-                font-family: courier, "courier new", monospace;
-                font-size: 12px;   
-            }
-        </style>
-        
-        <!-- PyScript [for terminal] -->
-        <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-        <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-
-        
-        <!-- <style> 
-            /* Style the header: fixed position (always stay at the top) */
-            .sticky-bar {
-                position: fixed;
-                top: 0;
-                z-index: 1;
-                width: 100%;
-                background-color: #f1f1f1;
-            }
-            
-            /* The progress container (grey background) */
-            .progress-container {
-                width: 100%;
-                height: 4px;
-                background: #ccc;
-            }
-            
-            /* The progress bar (scroll indicator) */
-            .progress-bar {
-                height: 8px;
-                background: #0c6dfc;
-                width: 0%;
-            }
-        </style> -->
-    </head>
-    <body>
-        
-        <!-- Header -->
-        <div class="p-5 bg-primary text-white text-center">
-            <!-- Title -->
-            <h1>[ FireBird ]</h1>
-            
-            <!-- Subtitle -->
-            <p>Welcome to the website devoted to programming</p> 
-        </div>
-        
-        <!-- ><nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <div class="container-fluid">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Active</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        -->
-        
-        <!-- Old Code  -->
-        <div class="stciky-bar feet">
-            <div class="progress-container">
-                <div class="progress-bar" id="myBar"></div>
-            </div>
-        </div>
-        
-        <!-- Nav Bar Container -->
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-            <div class="container-fluid">
-                <!-- Logo/Name -->
-                <a class="navbar-brand" href="javascript:void(0)">FireBird</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                
-                <!-- Nav Bar -->
-                <div class="collapse navbar-collapse" id="mynavbar">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="./services/">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./packages/">Packages</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./docs/">Documentation</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./projects/">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./articles/">Articles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/pigeon-nation/FireBird-Rescources">GitHub</a>
-                        </li>
-                    </ul>
-                    
-                    <!-- Modal Trigger Button -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Terminal
-                    </button>
-                    
-                    <!-- To Top Button -->
-                    <button onclick="topFunction()" id="toTop" title="Go to top">Top</button>
-                    
-                    <!-- To Top Button CSS -->
-                    <style>
-                        #toTop {
-                            display: none; /* Hidden by default */
-                            position: fixed; /* Fixed/sticky position */
-                            bottom: 20px; /* Place the button at the bottom of the page */
-                            right: 30px; /* Place the button 30px from the right */
-                            z-index: 99; /* Make sure it does not overlap */
-                            border: none; /* Remove borders */
-                            outline: none; /* Remove outline */
-                            background-color: #0c6dfc; /* Set a background color */
-                            color: white; /* Text color */
-                            cursor: pointer; /* Add a mouse pointer on hover */
-                            padding: 10px; /* Some padding */
-                            border-radius: 10px; /* Rounded corners */
-                            font-size: 16px; /* Increase font size */
-                        }
-                            
-                        #toTop:hover {
-                            background-color: #555; /* Add a dark-grey background on hover */
-                        }
-                    </style>
-                    
-                    <!-- Old Code: Feeeet!!-->
-                    <!-- ><style>
-                        .feet {
-                            position: fixed;
-                            bottom: 0;
-                            width: 100%;
-                        }
-                    </style>
-                    -->
-                    
-                    <!-- To Top Button Script -->
-                    <script>
-                        let mybutton = document.getElementById("toTop");
-                        window.onscroll = function() {scrollFunction()};
-                        
-                        function scrollFunction() {
-                            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                                mybutton.style.display = "block";
-                            } else {
-                                mybutton.style.display = "none";
-                            }
-                        }
-                        
-                        function topFunction() {
-                            document.body.scrollTop = 0; // Safari
-                            document.documentElement.scrollTop = 0; // Chrome, FireFox
-                        }
-                    </script>
-                    
-                    <!-- Search Feature (not added) -->
-                    <!-- 
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="text" placeholder="Search">
-                        <button class="btn btn-primary" type="button">Search</button>
-                    </form>
-                    -->
-                    
-                </div>
-            </div>
-        </nav>
-        
-        <!-- Content -->
-        <div class="container mt-5">
-            <div class="row">
-                
-                <!-- Side Nav/Content -->
-                <div class="col-sm-4">
-                    <!-- About FireCloud -->
-                    <h2>FireCloud</h2>
-                    <h5>Backend/Cloud Services for Developers</h5>
-                    <p>FireCloud is an online platform that contains many useful scripts and services, like online JavaScript and CSS resources, backend services for apps to communicate with, XMLRPC servers, generic embeddable pages and more!!</p>
-                    
-                    <!-- Services Nav/Index -->
-                    <h3 class="mt-4">Services:</h3>
-                    <p>Here are some of our many web-services, JS and CSS collections...</p>
-                    <ul class="nav nav-pills flex-column">
-                        <h6>Main: </h6>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">FireCloud</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">FireFHS</a>
-                        </li>
-                        
-                        <hr/>
-                        <h6>Others: </h6>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">DownNet (In Dev)</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./services/">Browse...</a>
-                        </li>
-                    </ul>
-                    
-                    <!-- Breakup/Horizontal Line -->
-                    <hr class="d-sm-none">
-                    
-                    <!-- Packages Nav/Index -->
-                    <h3 class="mt-4">Packages:</h3>
-                    <p>We have a wide range of packages for a multitude of programming languages. Here are some of our projects: </p>
-                    <ul class="nav nav-pills flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="./packages/">Browse...</a>
-                        </li>
-                        <hr/>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/pigeon-nation?tab=repositories">GitHub Repos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://pypi.org/user/pigeon-nation/">PyPi Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">FireOnline</a>
-                        </li>
-                    </ul>
-                    
-                    <!-- Breakup/Horizontal Line -->
-                    <hr class="d-sm-none">
-                    
-                    <!-- Documentation Nav/Index -->
-                    <h3 class="mt-4">Documentation:</h3>
-                    <p>We have documented almost everything we have to offer. You can browse our documentation below: </p>
-                    <ul class="nav nav-pills flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="./docs/">Browse...</a>
-                        </li>
-                        <hr/>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">GitHub Docs</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">FireCloud Docs</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">FireCDN Docs</a>
-                        </li>
-                    </ul>
-                    
-                    <!-- Breakup/Horizontal Line -->
-                    <hr class="d-sm-none">
-                </div>
-                
-                <!-- Main Content -->
-                <div class="col-sm-8">
-                    <!-- Heading & Logo -->
-                    <h2>About FireBird</h2>
-                    <img src="./img/logo.png" width="423px" height="90px">
-                    <br><br>
-                    
-                    <!-- About-->
-                    <h5>About Us</h5>
-                    <p>
-                        FireBird is a website devoted to helping developers write more efficient, smaller and understandable code, by either using web servers for backend (or frontend) implementation, or by using a some of our multitude of libraries to preform or simplify a generally complicated task (or in some cases, simple but you are too lazy). Our services are completely free, as this project is open source.
-                    </p>
-                    
-                    <!-- Offer? -->
-                    <h5>What do we offer?</h5>
-                    <p>
-                        FireBird offers a large range of different libraries in a multitude of programming languages, which can do lots of different things ranging from server communication to data structuring to string tokenisation and formatting - we cover practically all bases. We also have a multitude of cloud services, including FireCloud, a massive collection of different online scripts, servers, files and even web pages which are all available for usage.
-                    </p>
-                    
-                    <!-- Cost? -->
-                    <h5>Does this cost anything?</h5>
-                    <p>
-                        All FireBird (and FireCloud) services are completely free to use, as this project is entierly open-source, and also comprised of parts of other open-source software. In other words, no, you don't have to pay a signle thing!!
-                    </p>
-                    
-                    <!-- Data/Privacy -->
-                    <h5>Data and Privacy</h5>
-                    <p>
-                        We respect everybody's privacy greatly, and therefore we do not sell your data, or share your data with any third party for marketing. Our services also do not collect, use, access or require any personal/confidential data either, therefore making you pretty safe!! (Please note that some of our packages allow you to connect to third-party apis that may or may not comply with this policy).
-                    </p>
-                    
-                    <!-- Featured [info] -->
-                    <h2 class="mt-5">Featured Projects</h2>
-                    <p>These are the projects currently under the most development. Some may still be in the beta and alpha stages, so be sure to look out for updates. If some are beta or alpha, they may not be incredibly stable as they are pretty recent and have not been completely tested.</p>
-                    <h5>Our current featured projects include:</h5>
-                    
-                    <!-- Featured [content] -->
-                    <ul>
-                        <li><a><b>Codfish PL</b> (Programming Language)</a></li>
-                        <li><a>The <b>FireCloud Web API</b></a></li>
-                        <li><a><b>Rick Service</b></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Footer -->
-        <div class="mt-5 p-4 bg-dark text-white text-center">
-            <footer><div class="w3-center"><span><p class="code">(c) <script>document.write(Date().split(' ')[3])</script> FireBird :: MIT Licensed :: By Pigeon Nation :: <a href="https://figs4pigs.neocities.org/paper/rick-servicd">Rick Service</a> :: <a href="./affl/">Affiliates</a></p></span></div></footer>
-        </div>
-        
-        <!-- Bootstrap -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-        
-        
-        <!-- Terminal/Popup Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable">
-                <div class="modal-content">
-                    <!-- Header -->
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">PyScript Try-It Terminal</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    
-                    <!-- Content -->
-                    <div class="modal-body">
-                        <py-terminal></py-terminal>
-                        
-                        <div id="spinner" class="spinner-border" role="status">
-                            <span class="visually-hidden">Loading...</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Footer -->
-                    <div class="modal-footer">
-                        <a>Enter Python Script Below: </a>
-                        <textarea spellcheck="false" type="text" class="form-control codefont" aria-label="textarea" id="text-area"></textarea>
-                        <button id="submit-button" class="btn btn-secondary" type="submit" py-click="my_function()">Run</button>
-                        <button id="dia-btn" class="btn btn-secondary" type="submit" py-click="show_dia()">Help</button>
-                        <button id="docs-btn" class="btn btn-secondary" type="button" onclick="window.location.href='#'">Docs</button>
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Modal Script -->
-        <script>
-            // Get the modal
-            var modal = document.getElementById("myModal");
-            
-            // Get the button that opens the modal
-            var btn = document.getElementById("myBtn");
-            
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-            
-            // When the user clicks the button, open the modal 
-            btn.onclick = function() {
-                modal.style.display = "block";
-            }
-            
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
-            
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        </script>
-        
-        <!-- PyScript Configure -->
-        <py-config>
-            packages = ["requests", "termicod", "unitrees", "hashfish", "TimeQuery", "HashedDB", "text2numb", "pandas", "scipy"]
-            
-            [splashscreen]
-            enabled = false
-        </py-config>
-        
-        <!-- Python Script (PyScript) -->
-        <py-script>
-            # Standard Imports
-            from pyscript import Element
-            import requests, time
-            
-            # Delete Loading
-            spinner = Element('spinner')
-            spinner.remove_class("spinner-border")
-            
-            #msg = requests.get('msg.txt').text
-            msg = '''Welcome to the FireTerm!!\nThis is a simple platform for interacting with our \nbackend services in order to get a feel for them.\nThe terminal runs pure python. The available\nmodules include requests, pandas, scipy, and all the PyPi modules released\nby us and all the other modules\nin the standard python library (although they need\nimporting, and some might not work). You can also run the demo() command, \nwhich will give you demos for interacting with \nour services.\n\nPlease note that some modules may not work in the\nbrowser due to issues with python/pyscript \ncompatibility. Some known issues include failure\nto load text2numb. See docs for more info.\n\n[The] Demos are described in the docs. '''
-        
-            print("Load successful!! ")
-            print('-------------')
-            print()
-            
-            
-            run_num = 0
-            def my_function(*args, **kwargs):
-                global run_num
-                run_num += 1
-                
-                text = Element('text-area').element.value
-                print()
-                print('% run:', run_num, '%')
-                print('-------------')
-                exec(text)
-            
-            def show_dia(*a, **k):
-                for item in msg.split('\n'):
-                    print(item, end='\n')
-            
-            # Done!!
-            
-        </py-script>
-        
-        <!-- Old Code -->
-        <!-- ><script>
-            // When the user scrolls the page, execute myFunction 
-            window.onscroll = function() {myFunction()};
-            
-            function myFunction() {
-                var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-                var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                var scrolled = (winScroll / height) * 100;
-                document.getElementById("myBar").style.width = scrolled + "%";
-            }
-        </script> -->
-    
-    </body>
+	<head>
+		<!-- Title -->
+		<title>FireBird</title>
+		
+		<!-- Meta -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Bootstrap -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+		
+		<!-- Google Fonts: Inconsolata -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+		<style>
+			.code {
+				font-family: 'Inconsolata', serif;
+			}
+		</style>
+		
+		<!-- Basic CSS Alternate Font Handling -->
+		<style>
+			.codefont {  
+				font-family: courier, "courier new", monospace;
+				font-size: 12px;   
+			}
+		</style>
+		
+		<!-- PyScript [for terminal] -->
+		<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+		<script defer src="https://pyscript.net/latest/pyscript.js"></script>
+		
+		
+		<!-- <style> 
+		/* Style the header: fixed position (always stay at the top) */
+		.sticky-bar {
+		position: fixed;
+		top: 0;
+		z-index: 1;
+		width: 100%;
+		background-color: #f1f1f1;
+		}
+		
+		/* The progress container (grey background) */
+		.progress-container {
+		width: 100%;
+		height: 4px;
+		background: #ccc;
+		}
+		
+		/* The progress bar (scroll indicator) */
+		.progress-bar {
+		height: 8px;
+		background: #0c6dfc;
+		width: 0%;
+		}
+		</style> -->
+	</head>
+	<body>
+		
+		<!-- Header -->
+		<div class="p-5 bg-primary text-white text-center">
+			<!-- Title -->
+			<h1>[ FireBird ]</h1>
+			
+			<!-- Subtitle -->
+			<p>Welcome to the website devoted to programming</p> 
+		</div>
+		
+		<!-- ><nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<div class="container-fluid">
+		<ul class="navbar-nav">
+		<li class="nav-item">
+		<a class="nav-link active" href="#">Active</a>
+		</li>
+		
+		<li class="nav-item">
+		<a class="nav-link" href="#">Link</a>
+		</li>
+		
+		<li class="nav-item">
+		<a class="nav-link" href="#">Link</a>
+		</li>
+		
+		<li class="nav-item">
+		<a class="nav-link disabled" href="#">Disabled</a>
+		</li>
+		</ul>
+		</div>
+		</nav>
+		-->
+		
+		<!-- Old Code  -->
+		<div class="stciky-bar feet">
+			<div class="progress-container">
+				<div class="progress-bar" id="myBar"></div>
+			</div>
+		</div>
+		
+		<!-- Nav Bar Container -->
+		<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+			<div class="container-fluid">
+				<!-- Logo/Name -->
+				<a class="navbar-brand" href="javascript:void(0)">FireBird</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				
+				<!-- Nav Bar -->
+				<div class="collapse navbar-collapse" id="mynavbar">
+					<ul class="navbar-nav me-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="./services/">Services</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./packages/">Packages</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./docs/">Documentation</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./projects/">Projects</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./articles/">Articles</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/pigeon-nation/FireBird-Rescources">GitHub</a>
+						</li>
+					</ul>
+					
+					<!-- Modal Trigger Button -->
+					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+						Terminal
+					</button>
+					
+					<!-- To Top Button -->
+					<button onclick="topFunction()" id="toTop" title="Go to top">Top</button>
+					
+					<!-- To Top Button CSS -->
+					<style>
+						#toTop {
+							display: none; /* Hidden by default */
+							position: fixed; /* Fixed/sticky position */
+							bottom: 20px; /* Place the button at the bottom of the page */
+							right: 30px; /* Place the button 30px from the right */
+							z-index: 99; /* Make sure it does not overlap */
+							border: none; /* Remove borders */
+							outline: none; /* Remove outline */
+							background-color: #0c6dfc; /* Set a background color */
+							color: white; /* Text color */
+							cursor: pointer; /* Add a mouse pointer on hover */
+							padding: 10px; /* Some padding */
+							border-radius: 10px; /* Rounded corners */
+							font-size: 16px; /* Increase font size */
+						}
+						
+						#toTop:hover {
+							background-color: #555; /* Add a dark-grey background on hover */
+						}
+					</style>
+					
+					<!-- Old Code: Feeeet!!-->
+					<!-- ><style>
+					.feet {
+					position: fixed;
+					bottom: 0;
+					width: 100%;
+					}
+					</style>
+					-->
+					
+					<!-- To Top Button Script -->
+					<script>
+						let mybutton = document.getElementById("toTop");
+						window.onscroll = function() {scrollFunction()};
+						
+						function scrollFunction() {
+							if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+								mybutton.style.display = "block";
+							} else {
+								mybutton.style.display = "none";
+							}
+						}
+						
+						function topFunction() {
+							document.body.scrollTop = 0; // Safari
+							document.documentElement.scrollTop = 0; // Chrome, FireFox
+						}
+					</script>
+					
+					<!-- Search Feature (not added) -->
+					<!-- 
+					<form class="d-flex">
+					<input class="form-control me-2" type="text" placeholder="Search">
+					<button class="btn btn-primary" type="button">Search</button>
+					</form>
+					-->
+					
+				</div>
+			</div>
+		</nav>
+		
+		<!-- Content -->
+		<div class="container mt-5">
+			<div class="row">
+				
+				<!-- Side Nav/Content -->
+				<div class="col-sm-4">
+					<!-- About FireCloud -->
+					<h2>FireCloud</h2>
+					<h5>Backend/Cloud Services for Developers</h5>
+					<p>FireCloud is an online platform that contains many useful scripts and services, like online JavaScript and CSS resources, backend services for apps to communicate with, XMLRPC servers, generic embeddable pages and more!!</p>
+					
+					<!-- Services Nav/Index -->
+					<h3 class="mt-4">Services:</h3>
+					<p>Here are some of our many web-services, JS and CSS collections...</p>
+					<ul class="nav nav-pills flex-column">
+						<h6>Main: </h6>
+						<li class="nav-item">
+							<a class="nav-link active" href="#">FireCloud</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">FireFHS</a>
+						</li>
+						
+						<hr/>
+						<h6>Others: </h6>
+						
+						<li class="nav-item">
+							<a class="nav-link disabled" href="#">DownNet (In Dev)</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./services/">Browse...</a>
+						</li>
+					</ul>
+					
+					<!-- Breakup/Horizontal Line -->
+					<hr class="d-sm-none">
+					
+					<!-- Packages Nav/Index -->
+					<h3 class="mt-4">Packages:</h3>
+					<p>We have a wide range of packages for a multitude of programming languages. Here are some of our projects: </p>
+					<ul class="nav nav-pills flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="./packages/">Browse...</a>
+						</li>
+						<hr/>
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/pigeon-nation?tab=repositories">GitHub Repos</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="https://pypi.org/user/pigeon-nation/">PyPi Projects</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">FireOnline</a>
+						</li>
+					</ul>
+					
+					<!-- Breakup/Horizontal Line -->
+					<hr class="d-sm-none">
+					
+					<!-- Documentation Nav/Index -->
+					<h3 class="mt-4">Documentation:</h3>
+					<p>We have documented almost everything we have to offer. You can browse our documentation below: </p>
+					<ul class="nav nav-pills flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="./docs/">Browse...</a>
+						</li>
+						<hr/>
+						<li class="nav-item">
+							<a class="nav-link" href="#">GitHub Docs</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">FireCloud Docs</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">FireFHS Docs</a>
+						</li>
+					</ul>
+					
+					<!-- Breakup/Horizontal Line -->
+					<hr class="d-sm-none">
+				</div>
+				
+				<!-- Main Content -->
+				<div class="col-sm-8">
+					<!-- Heading & Logo -->
+					<h2>About FireBird</h2>
+					<img src="./img/logo.png" width="423px" height="90px">
+					<br><br>
+					
+					<!-- About-->
+					<h5>About Us</h5>
+					<p>
+						FireBird is a website devoted to helping developers write more efficient, smaller and understandable code, by either using web servers for backend (or frontend) implementation, or by using a some of our multitude of libraries to preform or simplify a generally complicated task (or in some cases, simple but you are too lazy). Our services are completely free, as this project is open source.
+					</p>
+					
+					<!-- Offer? -->
+					<h5>What do we offer?</h5>
+					<p>
+						FireBird offers a large range of different libraries in a multitude of programming languages, which can do lots of different things ranging from server communication to data structuring to string tokenisation and formatting - we cover practically all bases. We also have a multitude of cloud services, including FireCloud, a massive collection of different online scripts, servers, files and even web pages which are all available for usage.
+					</p>
+					
+					<!-- Cost? -->
+					<h5>Does this cost anything?</h5>
+					<p>
+						All FireBird (and FireCloud) services are completely free to use, as this project is entierly open-source, and also comprised of parts of other open-source software. In other words, no, you don't have to pay a signle thing!!
+					</p>
+					
+					<!-- Data/Privacy -->
+					<h5>Data and Privacy</h5>
+					<p>
+						We respect everybody's privacy greatly, and therefore we do not sell your data, or share your data with any third party for marketing. Our services also do not collect, use, access or require any personal/confidential data either, therefore making you pretty safe!! (Please note that some of our packages allow you to connect to third-party apis that may or may not comply with this policy).
+					</p>
+					
+					<!-- Featured [info] -->
+					<h2 class="mt-5">Featured Projects</h2>
+					<p>These are the projects currently under the most development. Some may still be in the beta and alpha stages, so be sure to look out for updates. If some are beta or alpha, they may not be incredibly stable as they are pretty recent and have not been completely tested.</p>
+					<h5>Our current featured projects include:</h5>
+					
+					<!-- Featured [content] -->
+					<ul>
+						<li><a><b>Codfish PL</b> (Programming Language)</a></li>
+						<li><a>The <b>FireCloud Web API</b></a></li>
+						<li><a><b>Rick Service</b></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Footer -->
+		<div class="mt-5 p-4 bg-dark text-white text-center">
+			<footer><div class="w3-center"><span><p class="code">(c) <script>document.write(Date().split(' ')[3])</script> FireBird :: MIT Licensed :: By Pigeon Nation :: <a href="https://figs4pigs.neocities.org/paper/rick-servicd">Rick Service</a> :: <a href="./affl/">Affiliates</a></p></span></div></footer>
+		</div>
+		
+		<!-- Bootstrap -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+		
+		
+		<!-- Terminal/Popup Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-scrollable">
+				<div class="modal-content">
+					<!-- Header -->
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="exampleModalLabel">PyScript Try-It Terminal</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					
+					<!-- Content -->
+					<div class="modal-body">
+						<py-terminal></py-terminal>
+						
+						<div id="spinner" class="spinner-border" role="status">
+							<span class="visually-hidden">Loading...</span>
+						</div>
+					</div>
+					
+					<!-- Footer -->
+					<div class="modal-footer">
+						<a>Enter Python Script Below: </a>
+						<textarea spellcheck="false" type="text" class="form-control codefont" aria-label="textarea" id="text-area"></textarea>
+						<button id="submit-button" class="btn btn-secondary" type="submit" py-click="my_function()">Run</button>
+						<button id="dia-btn" class="btn btn-secondary" type="submit" py-click="show_dia()">Help</button>
+						<button id="docs-btn" class="btn btn-secondary" type="button" onclick="window.location.href='#'">Docs</button>
+						<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Modal Script -->
+		<script>
+			// Get the modal
+			var modal = document.getElementById("myModal");
+			
+			// Get the button that opens the modal
+			var btn = document.getElementById("myBtn");
+			
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+			
+			// When the user clicks the button, open the modal 
+			btn.onclick = function() {
+				modal.style.display = "block";
+			}
+			
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+				modal.style.display = "none";
+			}
+			
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+			}
+		</script>
+		
+		<!-- PyScript Configure -->
+		<py-config>
+			packages = ["requests", "termicod", "unitrees", "hashfish", "TimeQuery", "HashedDB", "text2numb", "pandas", "scipy"]
+			
+			[splashscreen]
+			enabled = false
+		</py-config>
+		
+		<!-- Python Script (PyScript) -->
+		<py-script>
+			# Standard Imports
+			from pyscript import Element
+			import requests, time
+			
+			# Delete Loading
+			spinner = Element('spinner')
+			spinner.remove_class("spinner-border")
+			
+			#msg = requests.get('msg.txt').text
+			msg = '''Welcome to the FireTerm!!\nThis is a simple platform for interacting with our \nbackend services in order to get a feel for them.\nThe terminal runs pure python. The available\nmodules include requests, pandas, scipy, and all the PyPi modules released\nby us and all the other modules\nin the standard python library (although they need\nimporting, and some might not work). You can also run the demo() command, \nwhich will give you demos for interacting with \nour services.\n\nPlease note that some modules may not work in the\nbrowser due to issues with python/pyscript \ncompatibility. Some known issues include failure\nto load text2numb. See docs for more info.\n\n[The] Demos are described in the docs. '''
+			
+			print("Load successful!! ")
+			print('-------------')
+			print()
+			
+			
+			run_num = 0
+			def my_function(*args, **kwargs):
+			global run_num
+			run_num += 1
+			
+			text = Element('text-area').element.value
+			print()
+			print('% run:', run_num, '%')
+			print('-------------')
+			exec(text)
+			
+			def show_dia(*a, **k):
+			for item in msg.split('\n'):
+			print(item, end='\n')
+			
+			# Done!!
+			
+		</py-script>
+		
+		<!-- Old Code -->
+		<!-- ><script>
+		// When the user scrolls the page, execute myFunction 
+		window.onscroll = function() {myFunction()};
+		
+		function myFunction() {
+		var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+		var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+		var scrolled = (winScroll / height) * 100;
+		document.getElementById("myBar").style.width = scrolled + "%";
+		}
+		</script> -->
+		
+	</body>
 </html>
